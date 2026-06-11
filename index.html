@@ -3,6 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+ name="description"
+ content="STV Radiomeltdown is an independent radio network featuring live broadcasts, artist interviews, underground music, and culture stories."
+>
+
+<meta
+ property="og:title"
+ content="STV Radiomeltdown"
+>
+
+<meta
+ property="og:image"
+ content="cover.jpg"
+>
+
+<meta
+ property="og:description"
+ content="Independent radio. Exclusive interviews. Live culture."
+>
 <title>THE STATIC — STV Radiomeltdown</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap');
@@ -56,10 +75,9 @@
 
   .nav-logo span { color: var(--red); }
 
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
+  <button id="menuBtn">
+☰
+</button>
   }
 
   .nav-links a {
@@ -272,10 +290,11 @@
 
   /* Cards grid */
   .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5px;
-  }
+  display:grid;
+  grid-template-columns:
+  repeat(12,1fr);
+  gap:24px;
+}
 
   .issue-card {
     position: relative;
@@ -370,13 +389,20 @@
   }
 
   /* FEATURED card (spans 2) */
-  .issue-card.featured {
-    grid-column: span 2;
-    aspect-ratio: 16/9;
-  }
+  .card-xl {
+  grid-column: span 8;
+}
 
   .issue-card.featured .card-title { font-size: 2rem; }
-
+  
+  .card-md {
+  grid-column: span 4;
+}
+  <input
+  type="search"
+  placeholder="Search interviews, artists, stories..."
+  class="search-box"
+/>
   /* ── ADD ISSUE INSTRUCTION ── */
   .add-issue-note {
     margin-top: 2rem;
@@ -652,21 +678,86 @@
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="stvlogo.mpeg" type="video/mpeg">
-    <!-- fallback -->
-    <source src="mov-1.mp4" type="video/mp4">
+  <video class="hero-video" autoplay muted loop playsinline poster="hero.jpg">
+    <source src="stv-hero.mp4" type="video/mp4">
   </video>
-  <div class="hero-noise"></div>
-  <div class="hero-scan"></div>
-  <div class="hero-gradient"></div>
+
+  <div class="hero-overlay"></div>
+
   <div class="hero-content">
-    <p class="hero-eyebrow">STV Radiomeltdown · Lithonia, GA · G4E Movement Studio</p>
-    <h1 class="hero-title">The<br><em>Static</em></h1>
-    <p class="hero-sub">Where music meets the moment. Culture-driven. Community-built. Indie artists, underground talent, exclusive interviews — always live, always real.</p>
-    <a href="#the-static" class="hero-cta">↓ Browse All Issues</a>
+    <p class="hero-eyebrow">
+      Independent Radio • Culture • Community
+    </p>
+
+    <h1 class="hero-title">
+      STV<br>
+      RADIOMELTDOWN
+    </h1>
+
+    <p class="hero-sub">
+      Live radio, underground artists,
+      exclusive interviews and stories
+      from the culture.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://radiomeltdown.com" class="btn-red">
+        Listen Live
+      </a>
+
+      <a href="#latest" class="btn-outline">
+        Latest Stories
+      </a>
+    </div>
   </div>
 </section>
+
+  <section class="cover-story">
+
+  <div class="cover-image">
+    <img src="professor-griff.jpg" alt="">
+  </div>
+
+  <div class="cover-content">
+
+    <p class="section-label">
+      Cover Story
+    </p>
+
+    <h2>
+      Professor Griff
+    </h2>
+
+    <p>
+      Public Enemy's Minister of Information,
+      educator, author and cultural historian.
+    </p>
+
+    <a href="/professor-griff">
+      Read Feature →
+    </a>
+
+  </div>
+
+</section>
+
+  <section class="live-banner">
+
+  <div class="live-dot"></div>
+
+  <span>LIVE NOW</span>
+
+  <h2>
+    Streaming Worldwide
+  </h2>
+
+  <a href="https://radiomeltdown.com">
+    Launch Player
+  </a>
+
+</section>
+
+  
 
 <!-- THE STATIC ISSUES -->
 <section id="the-static">
@@ -822,6 +913,18 @@
       </div>
     </div>
   </div>
+</section>
+  <section class="player-strip">
+
+  <h3>
+    Listen While You Browse
+  </h3>
+
+  <iframe
+    src="https://radiomeltdown.com/player"
+    loading="lazy">
+  </iframe>
+
 </section>
 
 <!-- FOOTER -->
